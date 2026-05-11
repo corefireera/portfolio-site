@@ -13,7 +13,8 @@ function TopActions() {
   return (
     <div className="fixed right-8 top-7 z-20 flex items-center gap-3">
       <a
-        href="#"
+        href="/resume.pdf"
+        download
         className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 backdrop-blur transition hover:bg-white/10"
       >
         ⇩ Download Resume
@@ -78,16 +79,16 @@ export default function YuanquanPage() {
         </Link>
 
         {/* Hero */}
-        <header className="mt-14 text-center">
-          <h1 className="mx-auto max-w-[620px] text-[28px] font-semibold leading-tight tracking-tight text-white md:text-[36px]">
+        <header className="mt-14">
+          <h1 className="max-w-[620px] text-[28px] font-semibold leading-tight tracking-tight text-white md:text-[36px]">
             Yuanquan — Enterprise AI Annotation & Operations Platform
           </h1>
 
-          <p className="mx-auto mt-8 max-w-[620px] text-sm leading-7 text-neutral-300">
+          <p className="mt-8 max-w-[620px] text-sm leading-7 text-neutral-300">
             Designing a scalable operating system for enterprise AI data production.
           </p>
 
-          <p className="mx-auto mt-4 max-w-[620px] text-sm leading-7 text-neutral-400">
+          <p className="mt-4 max-w-[620px] text-sm leading-7 text-neutral-400">
             Maintaining structural consistency across a complex, multi-role AI platform
             through multiple product transitions.
           </p>
@@ -105,13 +106,13 @@ export default function YuanquanPage() {
             Internal Enterprise Product
           </p>
 
-          <p className="mx-auto mt-8 max-w-[620px] text-sm leading-7 text-neutral-400">
+          <p className="mt-8 max-w-[620px] text-sm leading-7 text-neutral-400">
             A complex B2B platform for enterprise AI training and operations, covering
             task workflows, annotation production, prompt management, knowledge base
             operations, and agent building.
           </p>
 
-          <div className="mx-auto mt-8 flex max-w-[620px] flex-wrap justify-center gap-2">
+          <div className="mt-8 flex max-w-[620px] flex-wrap justify-start gap-2">
             {tags.map((tag) => (
               <span
                 key={tag}
@@ -122,7 +123,7 @@ export default function YuanquanPage() {
             ))}
           </div>
 
-          <p className="mx-auto mt-8 max-w-[620px] text-xs leading-6 text-neutral-500">
+          <p className="mt-8 max-w-[620px] text-xs leading-6 text-neutral-500">
             UX Design Expert — Interaction Design · Information Architecture · Workflow
             Design · Cross-functional Collaboration
           </p>

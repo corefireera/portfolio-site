@@ -13,7 +13,8 @@ function TopActions() {
   return (
     <div className="fixed right-8 top-7 z-20 flex items-center gap-3">
       <a
-        href="#"
+        href="/resume.pdf"
+        download
         className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 backdrop-blur transition hover:bg-white/10"
       >
         ⇩ Download Resume

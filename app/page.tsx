@@ -79,6 +79,123 @@ const strengths = [
   },
 ];
 
+const heroIconClassName = "h-4 w-4 shrink-0";
+const heroPillClassName =
+  "inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-neutral-300 transition hover:border-white/20 hover:bg-white/[0.06] hover:text-white";
+
+function BriefcaseIcon({ className = heroIconClassName }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M9 7V6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v1"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <path
+        d="M4.5 8.5h15A1.5 1.5 0 0 1 21 10v7.5A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5V10a1.5 1.5 0 0 1 1.5-1.5Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3 12.5h18M10 12.5h4"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function LocationPinIcon({
+  className = heroIconClassName,
+}: {
+  className?: string;
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M12 21s6-5.4 6-11a6 6 0 0 0-12 0c0 5.6 6 11 6 11Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="10" r="2" stroke="currentColor" strokeWidth="1.8" />
+    </svg>
+  );
+}
+
+function MailIcon({ className = heroIconClassName }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+    >
+      <rect
+        x="4"
+        y="6"
+        width="16"
+        height="12"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.8"
+      />
+      <path
+        d="m5 8 7 5 7-5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ChainLinkIcon({
+  className = heroIconClassName,
+}: {
+  className?: string;
+}) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+    >
+      <path
+        d="M10 13a5 5 0 0 0 7.5.5l2.5-2.5a5 5 0 0 0-7-7l-1.5 1.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14 11a5 5 0 0 0-7.5-.5L4 13a5 5 0 0 0 7 7l1.5-1.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function TopActions() {
   return (
     <div className="fixed right-8 top-7 z-20 flex items-center gap-3">
@@ -184,23 +301,37 @@ export default function HomePage() {
           <p className="mt-2 text-sm text-neutral-400">刘顺东</p>
 
           <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-[#111] px-4 py-2 text-xs font-medium text-neutral-300">
-            <span className="h-2 w-2 rounded-full bg-green-500" />
+            <span className="relative flex h-2 w-2 items-center justify-center">
+              <span className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-green-500/20 motion-reduce:animate-none" />
+              <span className="relative h-2 w-2 rounded-full bg-green-500" />
+            </span>
             Open to Opportunities
           </div>
 
-          <div className="mx-auto mt-6 flex max-w-[620px] flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-neutral-400">
-            <span>▣ B2B UX Design / AI Product Practice</span>
-            <span>⌖ Hangzhou / Remote</span>
-            <a href="mailto:liushundong2026@gmail.com" className="hover:text-white">
-              ✉ Email
+          <div className="mx-auto mt-6 flex max-w-[620px] flex-wrap items-center justify-center gap-2">
+            <span className={heroPillClassName}>
+              <BriefcaseIcon />
+              B2B UX Design / AI Product Practice
+            </span>
+            <span className={heroPillClassName}>
+              <LocationPinIcon />
+              Hangzhou / Remote
+            </span>
+            <a
+              href="mailto:liushundong2026@gmail.com"
+              className={heroPillClassName}
+            >
+              <MailIcon />
+              Email
             </a>
             <a
               href="https://www.linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className={heroPillClassName}
             >
-              🔗 LinkedIn
+              <ChainLinkIcon />
+              LinkedIn
             </a>
           </div>
         </header>
@@ -277,7 +408,7 @@ export default function HomePage() {
             <div className="space-y-6">
               {strengths.map((item) => (
                 <div key={item.title} className="flex gap-4">
-                  <span className="mt-[7px] text-neutral-500">•</span>
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-500" />
                   <div>
                     <h3 className="text-base font-semibold text-white">
                       {item.title}

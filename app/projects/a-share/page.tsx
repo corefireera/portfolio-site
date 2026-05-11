@@ -6,7 +6,8 @@ function TopActions() {
   return (
     <div className="fixed right-8 top-7 z-20 flex items-center gap-3">
       <a
-        href="#"
+        href="/resume.pdf"
+        download
         className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 backdrop-blur transition hover:bg-white/10"
       >
         ⇩ Download Resume
@@ -86,6 +87,17 @@ export default function ASharePage() {
             short-term trading experience into reusable rules, metrics, and decision
             workflows.
           </p>
+
+          <div className="mt-8">
+            <a
+              href="https://ashare-decision-prototype.streamlit.app"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-neutral-300 transition hover:bg-white/10 hover:text-white"
+            >
+              Open Live Prototype ↗
+            </a>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {tags.map((tag) => (
